@@ -19,7 +19,7 @@ function crystalValues() {
         var num = Math.floor(Math.random() * 11) + 1;
         crystal_values.push(num);   
     }
-     console.log(crystal_values);
+     
 }
 
  crystalValues(); 
@@ -53,11 +53,10 @@ function lose() {
     reset();
 }
 
-//setting click event for blue crystal
+//setting click event for blue crystal.  
 
 $("#blue").on('click', function(){
     your_number = your_number + crystal_values[0];
-    console.log("New total = " + your_number);
     $("#total").text("New total " + your_number);
 
         if (your_number === random_number) {
@@ -71,7 +70,6 @@ $("#blue").on('click', function(){
 
 $("#green").on('click', function(){
     your_number = your_number + crystal_values[1];
-    console.log("New total = " + your_number);
     $("#total").text("New total: " + your_number);
 
         if (your_number === random_number) {
@@ -85,7 +83,6 @@ $("#green").on('click', function(){
 
 $("#yellow").on('click', function(){
     your_number = your_number + crystal_values[2];
-    console.log("New total = " + your_number);
     $("#total").text("New total " + your_number);
 
         if (your_number === random_number) {
@@ -99,7 +96,6 @@ $("#yellow").on('click', function(){
 
 $("#red").on('click', function(){
     your_number = your_number + crystal_values[3];
-    console.log("New total = " + your_number);
     $("#total").text("New total " + your_number);
 
         if (your_number === random_number) {
