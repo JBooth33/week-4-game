@@ -27,12 +27,14 @@ function crystalValues() {
 
 
 
-//reset the game
+/*reset the game (game reset is not fully functional.  it is supposed to run after every win and loss.  A new random number is generated, but 4 random numbers are added to the existing 4 numbers in the crystal_values array so that there are 8 values in the array.)*/
+
 function reset() {
     var wins = 0;
     var losses = 0;
     your_number = 0;
     var random_number = Math.floor(Math.random() * 100) +19;
+    $("#target").text("Target: " + random_number);
     var crystal_values = [];
     crystalValues();
 }
@@ -56,7 +58,7 @@ function lose() {
 $("#blue").on('click', function(){
     your_number = your_number + crystal_values[0];
     console.log("New total = " + your_number);
-    $("#total").text(your_number);
+    $("#total").text("New total " + your_number);
 
         if (your_number === random_number) {
             win();
@@ -70,7 +72,7 @@ $("#blue").on('click', function(){
 $("#green").on('click', function(){
     your_number = your_number + crystal_values[1];
     console.log("New total = " + your_number);
-    $("#total").text(your_number);
+    $("#total").text("New total: " + your_number);
 
         if (your_number === random_number) {
             win();
@@ -84,7 +86,7 @@ $("#green").on('click', function(){
 $("#yellow").on('click', function(){
     your_number = your_number + crystal_values[2];
     console.log("New total = " + your_number);
-    $("#total").text(your_number);
+    $("#total").text("New total " + your_number);
 
         if (your_number === random_number) {
             win();
@@ -98,7 +100,7 @@ $("#yellow").on('click', function(){
 $("#red").on('click', function(){
     your_number = your_number + crystal_values[3];
     console.log("New total = " + your_number);
-    $("#total").text(your_number);
+    $("#total").text("New total " + your_number);
 
         if (your_number === random_number) {
             win();
@@ -109,15 +111,4 @@ $("#red").on('click', function(){
 
 });
 
- /*var crystal = $(".crystals").children();
-        crystal.attr({
-            "class": 'crystal',
-            "number": crystal_value
-        });
-
-    $(".crystals").append(crystal);
-}
-
-//click event for each crystal
-$(".crystal").on('click', function () {
-    console.log($(this).attr("number")); */
+ 
