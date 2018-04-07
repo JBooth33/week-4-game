@@ -40,14 +40,14 @@ function reset() {
 //function for when player wins
 function win() {
     wins++
-    $("#wins").text(wins);
+    $("#wins").text("Wins: " + wins);
     reset();
 }
 
 //function for when player loses
 function lose() {
     losses++
-    $("#losses").text(losses);
+    $("#losses").text("Losses: " + losses);
     reset();
 }
 
